@@ -1,0 +1,339 @@
+:root {
+    --bg: #fff;
+    --accent: #0d6efd;
+    --dark: #111827;
+    --muted: #6b7280;
+    --container: 1200px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 1rem
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 60;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(120%) blur(6px);
+    border-bottom: 1px solid #eee
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--dark)
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center
+}
+
+.nav a {
+    color: var(--dark);
+    text-decoration: none;
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px
+}
+
+.nav a:hover {
+    background: #f3f4f6
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+    padding: .5rem .8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600
+}
+
+.btn-whatsapp.big {
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 0.5rem
+}
+
+/* menu toggle (mobile) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    padding: 6px
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #111;
+    margin: 4px 0;
+    border-radius: 2px
+}
+
+/* HERO full background */
+.hero {
+  position: relative;
+  height: 80vh; /* podés ajustar 70vh o 100vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 80px; /* para que no tape el header fijo */
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  color: white;
+  text-align: left;
+}
+
+.hero-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay .cta {
+  background: #0d6efd;
+  color: white;
+  padding: .8rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* opcional: oscurecer imagen de fondo */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* capa oscura */
+  z-index: 0;
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 0
+}
+
+.bg-light {
+    background: #fcfcfd
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 1rem
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04)
+}
+
+.benefits-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--muted)
+}
+
+.trainer-card.horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    max-width: 900px;
+    gap: 1.5rem;
+}
+
+.trainer-img-slider {
+    width: 200%;
+    height: 400px; /* o el alto que quieras */
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.trainer-img-slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.trainer-img-slider .slide.active {
+    opacity: 1;
+}
+
+
+
+.titulo-entrenador {
+   text-align: center;
+   font-size: 45px;
+   font-weight: bold;
+}
+
+.desc-entrenador{
+    text-align: center;
+}
+
+
+
+/* testimonials */
+.testimonials {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.testimonials blockquote {
+    flex: 1;
+    min-width: 220px;
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04)
+}
+
+/* footer */
+.site-footer {
+    padding: 36px 0;
+    border-top: 1px solid #eee
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.small {
+    color: var(--muted);
+    font-size: .9rem
+}
+
+.copyright {
+    background: #fbfbfb;
+    padding: 12px 0;
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: .9rem
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .trainers-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center
+    }
+
+    .hero-copy h1 {
+        font-size: 1.6rem
+    }
+
+    .header-inner {
+        height: 64px
+    }
+
+    .nav {
+        position: fixed;
+        inset: auto 0 0 0;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background: white;
+        transform: translateY(100%);
+        transition: transform .28s;
+        box-shadow: 0 -10px 30px rgba(2, 6, 23, 0.06)
+    }
+
+    .nav.open {
+        transform: translateY(0)
+    }
+
+    .menu-toggle {
+        display: block
+    }
+
+    .nav a {
+        padding: 0.8rem 0
+    }
+}
+
+@media (max-width: 520px) {
+    .grid-3 {
+        grid-template-columns: 1fr
+    }
+
+    .trainers-grid {
+        grid-template-columns: 1fr
+    }
+
+    .hero-image img {
+        height: 220px;
+        object-fit: cover
+    }
+}
