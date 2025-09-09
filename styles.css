@@ -49,7 +49,8 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     text-decoration: none;
-    color: var(--dark)
+    color: var(--dark);
+    font-size: 1.5rem;
 }
 
 .nav {
@@ -70,7 +71,7 @@ body {
 }
 
 .btn-whatsapp {
-    background: #25D366;
+    background: #fd810d;
     color: white;
     padding: .5rem .8rem;
     border-radius: 8px;
@@ -84,6 +85,7 @@ body {
     display: inline-block;
     margin-top: 0.5rem
 }
+
 
 /* menu toggle (mobile) */
 .menu-toggle {
@@ -130,25 +132,39 @@ body {
   max-width: 600px;
   color: white;
   text-align: left;
+  
 }
 
+
 .hero-overlay h1 {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
+  text-transform: uppercase;
   margin-bottom: .5rem;
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .hero-overlay p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .hero-overlay .cta {
-  background: #0d6efd;
+    display: block;       /* hace que el enlace sea un bloque para poder usar margin */
+  margin: 0 auto;       /* centra horizontalmente */
+  width: fit-content; 
+  background: #fd810d;
   color: white;
   padding: .8rem 1.2rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  text-transform: uppercase;
+  font-weight: bold;
+  
 }
 
 /* opcional: oscurecer imagen de fondo */
@@ -161,8 +177,22 @@ body {
 }
 
 /* SECTIONS */
+.container{
+    text-align: center;
+    
+}
+.container h2 {
+    font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
 .section {
-    padding: 60px 0
+    padding: 60px 0;
+    
+
+    
 }
 
 .bg-light {
@@ -172,21 +202,33 @@ body {
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 2rem;
     margin-top: 1rem
 }
 
 .card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04)
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    max-width: 100%;
+    background: rgba(134, 134, 134, 0.1);
+    border-radius: 9px;
+    gap: 2rem;
+    
 }
-
+.card img{
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+  
+}
 .benefits-list {
     margin: 0;
     padding-left: 1.2rem;
     color: var(--muted)
+    
 }
 
 .trainer-card.horizontal {
@@ -231,8 +273,6 @@ body {
 .desc-entrenador{
     text-align: center;
 }
-
-
 
 /* testimonials */
 .testimonials {
